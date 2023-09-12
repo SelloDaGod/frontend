@@ -15,7 +15,8 @@ export class Home extends Component {
 
     componentDidMount() {
        
-        axios.get('https://localhost:7081/categories', { headers: { 'Content-Type': 'application/json' } })
+        axios.get('https://localhost:7081/categories', { headers: { 'Content-Type': 'application/json',
+    'Access-Control-Allow-Origin': '*' } })
             .then(response => {
                 this.setState({ categories: response.data });
             })
